@@ -35,8 +35,10 @@ namespace Day2
                         break;
                 }
             }
+
+            var result = horizontal * depth;
             
-            Console.WriteLine(horizontal * depth);
+            Console.WriteLine(result);
         }
     }
 }
