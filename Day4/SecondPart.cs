@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Day4
 {
-    public class SecondPart
+    public static class SecondPart
     { 
         public static int GetResult(string[] fileLines)
         {
