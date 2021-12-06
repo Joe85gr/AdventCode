@@ -15,48 +15,44 @@ namespace Day5
             
             var coordinates = GetCoordinates(fileLines);
 
-            var horizontalAndVerticalCoordinates = coordinates
-                .Where(x => string.IsNullOrEmpty(x.CommonAxis.Key) == false)
-                .ToList();
-
-            var extraCoordinates = coordinates
-                .Where(x => string.IsNullOrEmpty(x.CommonAxis.Key))
-                .ToList();
-            
-            foreach (var coordinate in horizontalAndVerticalCoordinates)
+            foreach (var coordinate in coordinates)
             {
-                for (var i = coordinate.Start; i <= coordinate.End; i++)
-                {
-                    if(coordinate.CommonAxis.Key == "X") matrix[coordinate.CommonAxis.Value, i]++;
-                    else matrix[i, coordinate.CommonAxis.Value]++;
-                }
+                if(string.IsNullOrEmpty(coordinate.CommonAxis.Key)) SetDiagonal(matrix, coordinate);
+                else SetVerticalAndHorizontal(matrix, coordinate);
             }
             
-            Console.WriteLine($"Partial Result: {GetResult(matrix)}");
-            
-            foreach (var coordinate in extraCoordinates)
-            {
-                var x = coordinate.X1;
-                var y = coordinate.Y1;
-                
-                while (true)
-                {
-                    if (x == coordinate.X2 || y == coordinate.Y2)
-                    {
-                        matrix[x, y]++;
-                        break;
-                    }
-                    
-                    matrix[x, y]++;
-                    
-                    x += (int)coordinate.XChange;
-                    y += (int)coordinate.YChange;
-                }
-            }
-
             var result = GetResult(matrix);
             
             return result;
+        }
+
+        private static void SetVerticalAndHorizontal(int[,] matrix,Coordinate coordinate)
+        {
+            for (var i = coordinate.Start; i <= coordinate.End; i++)
+            {
+                if(coordinate.CommonAxis.Key == "X") matrix[coordinate.CommonAxis.Value, i]++;
+                else matrix[i, coordinate.CommonAxis.Value]++;
+            }
+        }
+
+        private static void SetDiagonal(int[,] matrix,Coordinate coordinate)
+        {
+            var x = coordinate.X1;
+            var y = coordinate.Y1;
+                
+            while (true)
+            {
+                if (x == coordinate.X2 || y == coordinate.Y2)
+                {
+                    matrix[x, y]++;
+                    break;
+                }
+                    
+                matrix[x, y]++;
+                    
+                x += (int)coordinate.XChange;
+                y += (int)coordinate.YChange;
+            }
         }
 
         private static List<Coordinate> GetCoordinates(string[] fileLines)
@@ -75,8 +71,6 @@ namespace Day5
 
             for (var x = 0; x < MatrixSize; x++)
             {
-                var line = new StringBuilder();
-
                 for (var y = 0; y < MatrixSize; y++)
                 {
                     if (matrix[x, y] >= 2) result++;
@@ -88,7 +82,6 @@ namespace Day5
         
         private static void PrintResult(int[,] matrix)
         {
-
             for (var y = 0; y < MatrixSize; y++)
             {
                 var line = new StringBuilder();
