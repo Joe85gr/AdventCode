@@ -6,6 +6,7 @@
     <projectFile>Day3/Day3.csproj</projectFile>
     <projectFile>Day4/Day4.csproj</projectFile>
     <projectFile>Day5/Day5.csproj</projectFile>
+    <projectFile>Day6/Day6.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
@@ -45,7 +46,7 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.Day5">
+  <component name="RunManager" selected=".NET Project.Day6">
     <configuration name="Day1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -136,6 +137,24 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="Day6" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Day6/Day6.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -145,7 +164,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638566813514</updated>
-      <workItem from="1638566827604" duration="56615000" />
+      <workItem from="1638566827604" duration="78385000" />
     </task>
     <servers />
   </component>
@@ -172,6 +191,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Day6/SecondPart.cs</url>
+          <line>24</line>
+          <properties documentPath="$PROJECT_DIR$/Day6/SecondPart.cs" initialLine="24" containingFunctionPresentation="method 'Count'">
+            <startOffsets>
+              <option value="571" />
+            </startOffsets>
+            <endOffsets>
+              <option value="586" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
