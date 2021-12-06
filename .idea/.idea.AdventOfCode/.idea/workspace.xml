@@ -164,7 +164,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638566813514</updated>
-      <workItem from="1638566827604" duration="78385000" />
+      <workItem from="1638566827604" duration="85646000" />
     </task>
     <servers />
   </component>
@@ -191,19 +191,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Day6/SecondPart.cs</url>
-          <line>24</line>
-          <properties documentPath="$PROJECT_DIR$/Day6/SecondPart.cs" initialLine="24" containingFunctionPresentation="method 'Count'">
-            <startOffsets>
-              <option value="571" />
-            </startOffsets>
-            <endOffsets>
-              <option value="586" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="143" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

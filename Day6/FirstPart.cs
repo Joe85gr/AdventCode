@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Day6.Models;
 
 namespace Day6
 {
     public static class FirstPart
     {
-        private const int Days = 256;
-        public static double GetResult(string[] fileLines)
+        private const int Days = 80;
+        public static double GetResult(IEnumerable<string> fileLines)
         {
             var fishes = fileLines.First()
                 .Split(',')
@@ -17,14 +16,14 @@ namespace Day6
 
             var count = 0d;
 
-            count += Count(fishes);
+            count += RecursiveCount(fishes);
             
             var result = count;
 
             return result;
         }
 
-        public static double Count(List<int[]> fishes)
+        private static double RecursiveCount(List<int[]> fishes)
         {
             var count = 0d;
             
@@ -44,7 +43,7 @@ namespace Day6
                     children.Add(new[] { 8, startDay});
                 }
 
-                if (children.Any()) count+=Count(children);
+                if (children.Any()) count+=RecursiveCount(children);
             }
 
             return count;
