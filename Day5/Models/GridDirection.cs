@@ -1,4 +1,4 @@
-namespace Day5
+namespace Day5.Models
 {
     public enum GridDirection
     {

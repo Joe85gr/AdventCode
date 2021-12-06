@@ -17,14 +17,12 @@ namespace Day5.Models
           
             if (X1 == X2)
             {
-                Start = Math.Min(Y1, Y2);
-                End = Math.Max(Y1, Y2);
+                (Start, End) = Y1 > Y2 ? (Y2, Y1) : (Y1, Y2);
                 CommonAxis = new KeyValuePair<string, int>("X", X1);
             }
             else if (Y1 == Y2)
             {
-                Start = Math.Min(X1, X2);
-                End = Math.Max(X1, X2);
+                (Start, End) = X1 > X2 ? (X2, X1) : (X1, X2);
                 CommonAxis = new KeyValuePair<string, int>("Y", Y1);
             }
             else
