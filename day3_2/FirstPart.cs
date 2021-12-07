@@ -1,9 +1,10 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Day3.Domain;
 
-namespace Day3
+namespace day3_2
 {
     public static class FirstPart
     {
@@ -30,19 +31,22 @@ namespace Day3
                 leastCommon.Append(occurrences.Last());
             }
 
-            var gamma = CustomConvert.BitsToInt(mostCommon); 
-            var epsilon = CustomConvert.BitsToInt(leastCommon);
+            var gamma = BitsToInt(mostCommon); 
+            var epsilon = BitsToInt(leastCommon);
 
             var result = gamma * epsilon;
 
             return result;
         }
         
+        private static int BitsToInt(StringBuilder bits) => Convert.ToInt32(bits.ToString(), 2);
         private static IEnumerable<char> GetDigitCount(IEnumerable<char> digits)
         {
-            return digits.GroupBy(d => d)
+            var digit = digits.GroupBy(d => d)
                 .OrderByDescending(d => d.Count())
                 .Select(d => d.Key);
+
+            return digit;
         }
     }
 }

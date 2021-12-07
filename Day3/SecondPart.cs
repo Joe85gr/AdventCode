@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
+using Day3.Domain;
 
 namespace Day3
 {
@@ -9,37 +8,57 @@ namespace Day3
     {
         public static int GetResult(string[] fileLines)
         {
-            var mostCommon = fileLines;
-            var leastCommon = fileLines;
+            var mostCommon = GetMostCommon(fileLines);
+            var leastCommon = GetLeastCommon(fileLines);
             
-            var digitCount = fileLines[0].Length;
-            
-            for (var i = 0; i < digitCount; i++)
-            {
-                var mostCommonGroups = GroupValues(mostCommon
-                    .Select(x => x[i].ToString()));
-                
-                var leastCommonGroups = GroupValues(leastCommon
-                    .Select(x => x[i].ToString()));
-                
-                var mostCommonNumber = GetMostCommonNumber(mostCommonGroups);
-                var leastCommonNumber = GetLeastCommonNumber(leastCommonGroups);
-
-                if(mostCommon.Length > 1)
-                    mostCommon = FilterValues(mostCommon, i, mostCommonNumber);
-                
-                if(leastCommon.Length > 1)
-                    leastCommon = FilterValues(leastCommon, i, leastCommonNumber);
-            }
-
-            var oxigenRating  = Convert.ToInt32(mostCommon.First(), 2);
-            var co2Rating = Convert.ToInt32(leastCommon.First(), 2);
+            var oxigenRating  = CustomConvert.BitsToInt(mostCommon);
+            var co2Rating = CustomConvert.BitsToInt(leastCommon);
 
             var result = oxigenRating * co2Rating;
             
             return result;
         }
 
+        private static string GetMostCommon(string[] mostCommon)
+        {
+            var i = 0;
+            
+            while (mostCommon.Length > 1)
+            {
+                var mostCommonGroups = GroupValues(mostCommon
+                    .Select(x => x[i].ToString()));
+                
+                var mostCommonNumber = mostCommonGroups["0"] == mostCommonGroups["1"] 
+                    ?  "1" : GetDigitCounts(mostCommonGroups).First().Key;
+
+                if(mostCommon.Length > 1)
+                    mostCommon = FilterValues(mostCommon, i, mostCommonNumber);
+                
+                i++;
+            }
+
+            return mostCommon.First();
+        }
+        private static string GetLeastCommon(string[] leastCommon)
+        {
+            var i = 0;
+            
+            while (leastCommon.Length > 1)
+            {
+                var leastCommonGroups = GroupValues(leastCommon
+                    .Select(x => x[i].ToString()));
+                
+                var leastCommonNumber = leastCommonGroups["0"] == leastCommonGroups["1"] 
+                    ? "0" :  GetDigitCounts(leastCommonGroups).Last().Key;
+
+                if(leastCommon.Length > 1)
+                    leastCommon = FilterValues(leastCommon, i, leastCommonNumber);
+
+                i++;
+            }
+
+            return leastCommon.First();
+        }
         private static string[] FilterValues(string[] numbers, int i, string filterCriteria)
         {
             return numbers
@@ -55,24 +74,9 @@ namespace Day3
             return groups;
         }
 
-        private static string GetMostCommonNumber(Dictionary<string, int> numberGroups)
+        private static IEnumerable<KeyValuePair<string, int>> GetDigitCounts(IReadOnlyDictionary<string, int> numberGroups)
         {
-            if (numberGroups["0"] == numberGroups["1"]) return "1";
-            
-            return numberGroups
-                .OrderByDescending(g => g.Value)
-                .First()
-                .Key;
-        }
-        
-        private static string GetLeastCommonNumber(Dictionary<string, int> numberGroups)
-        {
-            if (numberGroups["0"] == numberGroups["1"]) return "0";
-            
-            return numberGroups
-                .OrderByDescending(g => g.Value)
-                .Last()
-                .Key;
+             return numberGroups.OrderByDescending(g => g.Value);
         }
     }
 }

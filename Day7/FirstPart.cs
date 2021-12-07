@@ -1,17 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using Day7.Services;
 
 namespace Day7
 {
-    public class FirstPart
+    public static class FirstPart
     {
-        public static int GetResult(string[] fileLines)
+        public static int GetResult(IEnumerable<string> fileLines)
         {
-            var crabs = fileLines.First()
-                .Split(',')
-                .Select(int.Parse)
+            var crabs = CrabService
+                .GetCrabs(fileLines)
                 .ToList();
 
             var totalFuels = new Dictionary<int, int>();
@@ -25,12 +24,9 @@ namespace Day7
                 {
                     if (j == i) continue;
 
-                    var (min, max) = crabs[i] > crabs[j] ? (crabs[j], crabs[i]) : (crabs[i], crabs[j]);
-
-                    var fuelSpent = max - min;
+                    var fuelSpent = Math.Abs(crabs[i] - crabs[j]);
                     
                     totalFuels[crabs[i]] += fuelSpent;
-
                 }
             }
 

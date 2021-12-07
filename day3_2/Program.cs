@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 
-namespace Day3
+namespace day3_2
 {
-    internal static class Program
+    public static class Program
     {
-        private const string FilePath = "Day3.txt";
+        private const string FilePath = "Tests.txt";
 
         private static void Main()
         {
@@ -18,11 +18,11 @@ namespace Day3
             Console.WriteLine($"Day 3 - First Part result: {firstPartResult}");
             Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
             
-            watch.Start();
-            var secondPartResult = SecondPart.GetResult(fileLines);
-            watch.Stop();
-            Console.WriteLine($"Day 3 - Second Part result: {secondPartResult}");
-            Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
+            // watch.Start();
+            // var secondPartResult = SecondPart.GetResult(fileLines);
+            // watch.Stop();
+            // Console.WriteLine($"Day 3 - Second Part result: {secondPartResult}");
+            // Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
         }
     }
 }

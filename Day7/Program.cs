@@ -9,10 +9,9 @@ namespace Day7
 
         private static void Main()
         {
-            var watch = new System.Diagnostics.Stopwatch();
-            
             var fileLines = File.ReadAllLines(FilePath);
-            
+            var watch = new System.Diagnostics.Stopwatch();
+
             watch.Start();
             var firstPartResult = FirstPart.GetResult(fileLines);
             watch.Stop();

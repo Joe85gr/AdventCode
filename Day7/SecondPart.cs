@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Day7.Domain;
+using Day7.Services;
 
 namespace Day7
 {
@@ -9,18 +10,11 @@ namespace Day7
     {
         public static double GetResult(IEnumerable<string> fileLines)
         {
-            var crabs = fileLines.First()
-                .Split(',')
-                .Select(int.Parse)
-                .ToList();
-
-            var minPosition = crabs.Min();
-            var maxPosition = crabs.Max();
-
-            var totalFuels = Enumerable
-                .Range(minPosition, maxPosition + 1)
-                .Select(r => new [] {r, 0})
+            var crabs = CrabService
+                .GetCrabs(fileLines)
                 .ToArray();
+
+            var totalFuels = SetTotalFuels(crabs.Min(), crabs.Max());
 
             var preCalculatedFuels = new Dictionary<int, int>();
             
@@ -31,13 +25,12 @@ namespace Day7
                     if (preCalculatedFuels.ContainsKey(steps))
                     {
                         totalFuels[i][1] += preCalculatedFuels[steps];
+                        continue;
                     }
-                    else
-                    {
-                        var total = Calculations.CalculateTriangle(steps);
-                        totalFuels[i][1] += Calculations.CalculateTriangle(steps);
-                        preCalculatedFuels.Add(steps, total);
-                    }
+                    
+                    var total = Calculations.CalculateTriangle(steps);
+                    totalFuels[i][1] += Calculations.CalculateTriangle(steps);
+                    preCalculatedFuels.Add(steps, total);
                 }
             }
 
@@ -45,5 +38,14 @@ namespace Day7
 
             return result;
         }
+
+        private static int[][] SetTotalFuels(int minPosition, int maxPosition)
+        {
+            return Enumerable
+                .Range(minPosition, maxPosition + 1)
+                .Select(r => new [] {r, 0})
+                .ToArray();
+        }
+        
     }
 }
