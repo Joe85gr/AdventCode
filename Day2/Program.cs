@@ -9,36 +9,15 @@ namespace Day2
 
         private static void Main()
         {
-            var fileLines = File.ReadAllLines(FilePath);
-
-            var horizontal = 0d;
-            var depth = 0d;
-            var aim = 0d;
+            var watch = new System.Diagnostics.Stopwatch();
+            var directions = File.ReadAllLines(FilePath);
             
-            foreach (var line in fileLines)
-            {
-                var data = line.Split(' ');
-                var instruction = data[0];
-                var value = Convert.ToDouble(data[1]);
-
-                switch (instruction)
-                {
-                    case "forward":
-                        horizontal += value;
-                        depth += aim * value;
-                        break;
-                    case "down":
-                        aim += value;
-                        break;
-                    case "up":
-                        aim -= value;
-                        break;
-                }
-            }
-
-            var result = horizontal * depth;
+            watch.Start();
+            var secondPartResult = SecondPart.GetResult(directions);
+            watch.Stop();
+            Console.WriteLine($"Day 7 - Second Part result: {secondPartResult}");
+            Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
             
-            Console.WriteLine(result);
         }
     }
 }
