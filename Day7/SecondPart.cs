@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Day7.Domain;
 
 namespace Day7
 {
@@ -20,22 +21,23 @@ namespace Day7
                 .Range(minPosition, maxPosition + 1)
                 .Select(r => new [] {r, 0})
                 .ToArray();
+
+            var preCalculatedFuels = new Dictionary<int, int>();
             
             for (var i = 0; i < totalFuels.Length; i++)
             {
-                foreach (var crab in crabs)
+                foreach (var steps in crabs.Select(crab => Math.Abs(crab - i)))
                 {
-                    var steps = Math.Abs(crab - i);
-                    var currentConsumption = 1;
-                    var total = 0;
-
-                    for (var k = 0; k < steps; k++)
+                    if (preCalculatedFuels.ContainsKey(steps))
                     {
-                        total += currentConsumption;
-                        currentConsumption++;
+                        totalFuels[i][1] += preCalculatedFuels[steps];
                     }
-
-                    totalFuels[i][1] += total;
+                    else
+                    {
+                        var total = Calculations.CalculateTriangle(steps);
+                        totalFuels[i][1] += Calculations.CalculateTriangle(steps);
+                        preCalculatedFuels.Add(steps, total);
+                    }
                 }
             }
 
