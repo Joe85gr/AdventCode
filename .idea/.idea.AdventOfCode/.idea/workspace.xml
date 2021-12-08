@@ -23,12 +23,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/27f8ca52ec2b49faee76f18aa9904154d150b32442c447aea21abec24988e1bb/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d55039925d16994d25bd1e6839b4a1d48fd160cbc63d53e219d2bc43f97451f8/StringBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fcc9127612a94635a5dd95167dc88a2f65400/bf/18fab2ad/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d1a313ced8e048f091676da22c2a7567df5f1c91b4b0b7128e8831aa7be0845/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9bbe37df5c78feaa58d67a17787a1bc62111c939b6fbb4d30d993a443a2c2d/String.Comparison.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/917d6b1b061eb8df5da91827ef1d5e6ab947ed9aa77e99fb68eccc77882ccf9/HashHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fcc9127612a94635a5dd95167dc88a2f65400/54/cc586935/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8d94d2e6b253287ab59455e84e6426a47a8a36783843794d5828ee25757efa8c/Interop.IOErrors.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/26f584213b81ee375def8b80d3bb3a5808cd73f4eed7d1589f876f0cea872/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9882fb0e2b986c3ba64cced95d2d159ceffd3d9ce1414158cae9d23de1a5c3/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -223,7 +226,7 @@
       <updated>1638566813514</updated>
       <workItem from="1638566827604" duration="96588000" />
       <workItem from="1638876056760" duration="21479000" />
-      <workItem from="1638950307193" duration="1435000" />
+      <workItem from="1638950307193" duration="32549000" />
     </task>
     <servers />
   </component>
@@ -263,19 +266,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Day8/FirstPart.cs</url>
-          <line>12</line>
-          <properties documentPath="$PROJECT_DIR$/Day8/FirstPart.cs" initialLine="12" containingFunctionPresentation="method 'GetResult'">
-            <startOffsets>
-              <option value="249" />
-            </startOffsets>
-            <endOffsets>
-              <option value="292" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
