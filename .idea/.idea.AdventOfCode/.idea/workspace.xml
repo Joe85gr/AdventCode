@@ -10,6 +10,7 @@
     <projectFile>Day7/Day7.csproj</projectFile>
     <projectFile>day3_2/day3_2.csproj</projectFile>
     <projectFile>Day8/Day8.csproj</projectFile>
+    <projectFile>Day9/Day9.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
@@ -52,7 +53,7 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.Day8">
+  <component name="RunManager" selected=".NET Project.Day9">
     <configuration name="Day1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -197,6 +198,24 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="Day9" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Day9/Day9.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="day3_2" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -226,7 +245,7 @@
       <updated>1638566813514</updated>
       <workItem from="1638566827604" duration="96588000" />
       <workItem from="1638876056760" duration="21479000" />
-      <workItem from="1638950307193" duration="32872000" />
+      <workItem from="1638950307193" duration="50801000" />
     </task>
     <servers />
   </component>
@@ -266,6 +285,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Day9/FirstPart.cs</url>
+          <line>16</line>
+          <properties documentPath="$PROJECT_DIR$/Day9/FirstPart.cs" initialLine="16" containingFunctionPresentation="method 'GetResult'">
+            <startOffsets>
+              <option value="380" />
+            </startOffsets>
+            <endOffsets>
+              <option value="425" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
