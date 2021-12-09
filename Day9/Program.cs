@@ -18,11 +18,11 @@ namespace Day9
             Console.WriteLine($"Day 9 - First Part result: {firstPartResult}");
             Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
             
-            // watch.Start();
-            // var secondPartResult = SecondPart.GetResult(fileLines);
-            // watch.Stop();
-            // Console.WriteLine($"Day 8 - Second Part result: {secondPartResult}");
-            // Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
+            watch.Start();
+            int secondPartResult = SecondPart.GetResult(fileLines);
+            watch.Stop();
+            Console.WriteLine($"Day 9 - Second Part result: {secondPartResult}");
+            Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
         }
     }
 }
