@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Day9.Models;
 
 namespace Day9
 {
@@ -20,17 +18,10 @@ namespace Day9
                 basins.Add(GetBasin(lowestPoint, matrix));
             }
 
-            var top3Basin = basins.OrderByDescending(x => x)
+            var result = basins.OrderByDescending(x => x)
                 .Take(3)
-                .ToArray();
+                .Aggregate(1, (total, value) => total * value);
 
-            var result = 1;
-
-            foreach (var basin in top3Basin)
-            {
-                result *= basin;
-            }
-            
             return result;
         }
 
@@ -50,19 +41,19 @@ namespace Day9
             alreadyChecked[(x, y)] = true;
             
             //  Check Right
-            if((currentNum - 1 == matrix[y][x + 1] || currentNum + 1 == matrix[y][x + 1]) && matrix[y][x + 1] < 9)
+            if(currentNum < matrix[y][x + 1] && matrix[y][x + 1] < 9)
                 if(alreadyChecked.ContainsKey((x + 1,y)) == false)
                     count+=CheckAdiacent(matrix,x + 1, y, alreadyChecked);
             // Check Left
-            if((currentNum - 1 == matrix[y][x - 1] || currentNum + 1 == matrix[y][x - 1]) && matrix[y][x - 1] < 9)
+            if((currentNum < matrix[y][x - 1]) && matrix[y][x - 1] < 9)
                 if(alreadyChecked.ContainsKey((x - 1,y)) == false)
                     count+=CheckAdiacent(matrix,x - 1, y, alreadyChecked);
             // Check Down
-            if((currentNum - 1 == matrix[y + 1][x] || currentNum + 1 == matrix[y + 1][x]) && matrix[y + 1][x] < 9)
+            if((currentNum < matrix[y + 1][x] || currentNum + 1 == matrix[y + 1][x]) && matrix[y + 1][x] < 9)
                 if(alreadyChecked.ContainsKey((x,y + 1)) == false)
                     count+=CheckAdiacent(matrix,x,y + 1, alreadyChecked);
             // Check Up
-            if((currentNum - 1 == matrix[y - 1][x] || currentNum + 1 == matrix[y - 1][x]) && matrix[y - 1][x] < 9)
+            if((currentNum < matrix[y - 1][x]) && matrix[y - 1][x] < 9)
                 if(alreadyChecked.ContainsKey((x,y - 1)) == false)
                     count+=CheckAdiacent(matrix,x, y - 1, alreadyChecked);
 
@@ -73,7 +64,6 @@ namespace Day9
         private static List<List<int>> CreateMatrix(IReadOnlyList<string> fileLines)
         {
             var topAndBottomRow = new List<int>();
-
             
             for (var i = 0; i < fileLines[0].Length + 2; i++)
             {

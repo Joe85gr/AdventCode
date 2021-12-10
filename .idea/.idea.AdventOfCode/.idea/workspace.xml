@@ -251,7 +251,7 @@
       <workItem from="1638876056760" duration="21479000" />
       <workItem from="1638950307193" duration="79705000" />
       <workItem from="1639091341029" duration="933000" />
-      <workItem from="1639092292141" duration="5570000" />
+      <workItem from="1639092292141" duration="8813000" />
     </task>
     <servers />
   </component>
@@ -284,19 +284,6 @@
           <line>38</line>
           <properties documentPath="$PROJECT_DIR$/day3_2/FirstPart.cs" initialLine="12" containingFunctionPresentation="method 'GetResult'" />
           <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Day9/SecondPart.cs</url>
-          <line>22</line>
-          <properties documentPath="$PROJECT_DIR$/Day9/SecondPart.cs" initialLine="22" containingFunctionPresentation="method 'GetResult'">
-            <startOffsets>
-              <option value="559" />
-            </startOffsets>
-            <endOffsets>
-              <option value="660" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
