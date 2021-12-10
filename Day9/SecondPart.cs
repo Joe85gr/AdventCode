@@ -36,115 +36,45 @@ namespace Day9
 
         private static int GetBasin((int Row, int Col) lowestPoint, List<List<int>> matrix)
         {
-            var matchesFound = new Dictionary<(int Row, int Col), bool>
-            {
-                {(lowestPoint.Row, lowestPoint.Col), true}
-            };
+            var alreadyChecked = new Dictionary<(int Row, int Col), bool>();
             
-            var locationsToCheck = new List<(int Row, int Col)>
-            {
-                lowestPoint
-            };
+            var count = CheckAdiacent(matrix, lowestPoint.Row, lowestPoint.Col, alreadyChecked);
 
-            while (locationsToCheck.Count > 0)
-            {
-                var coordinates = locationsToCheck.First();
-                
-                CheckRow(coordinates, locationsToCheck, matrix, matchesFound, Direction.Right);
-                CheckRow(coordinates, locationsToCheck, matrix, matchesFound, Direction.Left);
-                
-                CheckCol(coordinates, locationsToCheck, matrix, matchesFound, Direction.Up);
-                CheckCol(coordinates, locationsToCheck, matrix, matchesFound, Direction.Down);
-
-                locationsToCheck.Remove(coordinates);
-            }
-
-            return matchesFound.Count;
+            return count;
         }
 
-        private static void CheckCol((int Row, int Col) coordinates, List<(int Row, int Col)> pointsToCheck,
-            List<List<int>> matrix, Dictionary<(int Row, int Col), bool> matchesFound, Direction direction)
+        private static int CheckAdiacent(List<List<int>> matrix, int x, int y, Dictionary<(int Row, int Col),bool> alreadyChecked)
         {
-            var x = coordinates.Row;
-            var y = coordinates.Col;
-
+            var count = 1;
             var currentNum = matrix[y][x];
-
-            var coefficient = direction switch
-            {
-                Direction.Up => -1,
-                Direction.Down => 1,
-                _ => throw new Exception("Direction not implemented")
-            };
+            alreadyChecked[(x, y)] = true;
             
-            var i = 1;
-            
-            while (true)
-            {
-                var nextNum = matrix[y + (i * coefficient)][x];
+            //  Check Right
+            if((currentNum - 1 == matrix[y][x + 1] || currentNum + 1 == matrix[y][x + 1]) && matrix[y][x + 1] < 9)
+                if(alreadyChecked.ContainsKey((x + 1,y)) == false)
+                    count+=CheckAdiacent(matrix,x + 1, y, alreadyChecked);
+            // Check Left
+            if((currentNum - 1 == matrix[y][x - 1] || currentNum + 1 == matrix[y][x - 1]) && matrix[y][x - 1] < 9)
+                if(alreadyChecked.ContainsKey((x - 1,y)) == false)
+                    count+=CheckAdiacent(matrix,x - 1, y, alreadyChecked);
+            // Check Down
+            if((currentNum - 1 == matrix[y + 1][x] || currentNum + 1 == matrix[y + 1][x]) && matrix[y + 1][x] < 9)
+                if(alreadyChecked.ContainsKey((x,y + 1)) == false)
+                    count+=CheckAdiacent(matrix,x,y + 1, alreadyChecked);
+            // Check Up
+            if((currentNum - 1 == matrix[y - 1][x] || currentNum + 1 == matrix[y - 1][x]) && matrix[y - 1][x] < 9)
+                if(alreadyChecked.ContainsKey((x,y - 1)) == false)
+                    count+=CheckAdiacent(matrix,x, y - 1, alreadyChecked);
 
-                var nextNumFlows = (currentNum + 1 == nextNum || currentNum - 1 == nextNum) && nextNum < 9;
-                
-                if(nextNumFlows == false) break;
-                var key = (x, y + (i * coefficient));
-                
-                if (matchesFound.ContainsKey(key) == false)
-                {
-                    matchesFound.Add(key, true);
-                    pointsToCheck.Add(key);
-                };
-
-                currentNum = nextNum;
-                
-                i++;
-            }
+            return count;
         }
 
-        private static void CheckRow((int Row, int Col) coordinates, List<(int Row, int Col)> pointsToCheck, 
-            List<List<int>> matrix, Dictionary<(int Row, int Col), bool> matchesFound, Direction direction)
-        {
-            var x = coordinates.Row;
-            var y = coordinates.Col;
-
-            var currentNum = matrix[y][x];
-
-            var coefficient = direction switch
-            {
-                Direction.Left => -1,
-                Direction.Right => 1,
-                _ => throw new Exception("Direction not implemented")
-            };
-            
-            var i = 1;
-            
-            while (true)
-            {
-                var nextNum = matrix[y][x + (i * coefficient)];
-
-                var nextNumFlows = (currentNum + 1 == nextNum || currentNum - 1 == nextNum) && nextNum < 9;
-                
-                if(nextNumFlows == false) break;
-                var key = (x + (i * coefficient), y);
-
-                if (matchesFound.ContainsKey(key) == false)
-                {
-                    matchesFound.Add(key, true);
-                    pointsToCheck.Add(key);
-                };
-
-                currentNum = nextNum;
-                
-                i++;
-            }
-            
-        }
-        
-
+        //  Wraps the matrix with "99" to make life easier :D
         private static List<List<int>> CreateMatrix(IReadOnlyList<string> fileLines)
         {
             var topAndBottomRow = new List<int>();
 
-            //  Adds dummy 9 rows and columns :D
+            
             for (var i = 0; i < fileLines[0].Length + 2; i++)
             {
                 topAndBottomRow.Add(99);

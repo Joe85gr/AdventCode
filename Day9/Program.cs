@@ -1,16 +1,18 @@
 ﻿using System;
 using System.IO;
+using AdventOfCode2021.Day09;
 
 namespace Day9
 {
     public static class Program
     {
-        private const string FilePath = "Day9.txt";
+        private const string FilePath = "Tests.txt";
         
         private static void Main()
         {
             var fileLines = File.ReadAllLines(FilePath);
             var watch = new System.Diagnostics.Stopwatch();
+
 
             watch.Start();
             var firstPartResult = FirstPart.GetResult(fileLines);
