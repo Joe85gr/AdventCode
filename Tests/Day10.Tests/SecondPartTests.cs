@@ -13,7 +13,7 @@ namespace Tests.Day10.Tests
         {
             var fileLines = File.ReadAllLines("MockData.txt");
 
-            var expected = 288957;
+            const int expected = 288957;
             var actual = _secondPart.GetResult(fileLines);
             
             Assert.Equal(expected, actual);

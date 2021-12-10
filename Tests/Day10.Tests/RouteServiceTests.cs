@@ -26,8 +26,3 @@ namespace Tests.Day10.Tests
         }
     }
 }
-
-// ): 3 points.
-// ]: 57 points.
-// }: 1197 points.
-// >: 25137 points.

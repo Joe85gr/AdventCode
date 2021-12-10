@@ -14,7 +14,7 @@ namespace Tests.Day10.Tests
                 ')', '>'
             };
 
-            var expected = 26397;
+            const int expected = 26397;
             var actual = Calculations.GetTotalErrorScore(errorLines);
 
             Assert.Equal(expected, actual);
@@ -22,6 +22,10 @@ namespace Tests.Day10.Tests
         
         [Theory]
         [InlineData("{{[[({([", 288957)]
+        [InlineData("({<[{(", 5566)]
+        [InlineData("{{<{<((((", 1480781)]
+        [InlineData("[[{{[{[{<", 995444)]
+        [InlineData("[({<", 294)]
         public void GetTotalAutoCompleteScore_ReturnsCorrectScore(string incompleteLine, int expected)
         {
             var actual = Calculations.GetTotalAutoCompleteScore(incompleteLine);
