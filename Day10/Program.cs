@@ -1,11 +1,14 @@
 ﻿using System;
 using System.IO;
 
-namespace Day9
+namespace Day10
 {
     public static class Program
     {
-        private const string FilePath = "Day9.txt";
+        private const string FilePath = "Day10.txt";
+
+        private static readonly FirstPart FirstPart = new();
+        private static readonly SecondPart SecondPart = new();
         
         private static void Main()
         {
@@ -15,13 +18,13 @@ namespace Day9
             watch.Start();
             var firstPartResult = FirstPart.GetResult(fileLines);
             watch.Stop();
-            Console.WriteLine($"Day 9 - First Part result: {firstPartResult}");
+            Console.WriteLine($"Day 10 - First Part result: {firstPartResult}");
             Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
             
             watch.Start();
-            int secondPartResult = SecondPart.GetResult(fileLines);
+            var secondPartResult = SecondPart.GetResult(fileLines);
             watch.Stop();
-            Console.WriteLine($"Day 9 - Second Part result: {secondPartResult}");
+            Console.WriteLine($"Day 10 - Second Part result: {secondPartResult}");
             Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
         }
     }
