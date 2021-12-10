@@ -105,7 +105,8 @@ namespace Day8
 
             foreach (var chr in from)
             {
-                if (charsToRemove.Contains(chr.ToString()) == false) builder.Append(chr);
+                if (charsToRemove.Contains(chr.ToString()) == false) 
+                    builder.Append(chr);
             }
 
             return builder.ToString();

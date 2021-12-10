@@ -4,11 +4,9 @@ using System.Linq;
 
 namespace Day6
 {
-    public static class SecondPart
+    public static class FirstAndSecondPart
     {
-        private const int Days = 256;
-        
-        public static double GetResult(IEnumerable<string> fileLines)
+        public static double GetResult(IEnumerable<string> fileLines, int days)
         {
             var fishes = fileLines
                 .First()
@@ -18,7 +16,7 @@ namespace Day6
 
             var fishTimers = GetInitialFishesTimers(fishes);
 
-            for (var i = 0; i < Days; i++)
+            for (var i = 0; i < days; i++)
             {
                 var newBorn = fishTimers[0];
                 fishTimers[0] = fishTimers[1];

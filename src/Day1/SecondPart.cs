@@ -10,7 +10,7 @@ namespace Day1
         {
             var depths = fileLines.Select(x => Convert.ToInt32(x)).ToList();
 
-            var count = 0;
+            var result = 0;
             
             var previousDepthsSum = depths[0] + depths[1] + depths[2];
 
@@ -20,12 +20,12 @@ namespace Day1
             {
                 var currentDepthsSum = depths[i] + depths[i + 1] + depths[i + 2];
                 
-                if (currentDepthsSum > previousDepthsSum) count++;
+                if (currentDepthsSum > previousDepthsSum) result++;
 
                 previousDepthsSum = currentDepthsSum;
             }
 
-            return count;
+            return result;
         }
     }
 }

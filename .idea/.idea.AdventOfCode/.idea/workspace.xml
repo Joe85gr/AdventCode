@@ -12,6 +12,9 @@
     <projectFile>src/Day9/Day9.csproj</projectFile>
     <projectFile>src/Day10/Day10.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="520bc961-50c6-4c1b-923c-764729aafe62" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,10 +34,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="ReSpellerSettingsId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.Day1">
+  <component name="RunManager" selected=".NET Project.Day9">
     <configuration name="Day1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -224,7 +231,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639162240830</updated>
-      <workItem from="1639162252231" duration="809000" />
+      <workItem from="1639162252231" duration="4672000" />
     </task>
     <servers />
   </component>
@@ -235,5 +242,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Day9/FirstPart.cs</url>
+          <line>39</line>
+          <properties documentPath="$PROJECT_DIR$/src/Day9/FirstPart.cs" initialLine="39" containingFunctionPresentation="method 'GetResult'">
+            <startOffsets>
+              <option value="1234" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1248" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

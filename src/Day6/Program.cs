@@ -14,7 +14,7 @@ namespace Day6
             var fileLines = File.ReadAllLines(FilePath);
             
              watch.Start();
-             var firstPartResult = FirstPart.GetResult(fileLines);
+             var firstPartResult = FirstAndSecondPart.GetResult(fileLines, 80);
              watch.Stop();
              Console.WriteLine($"Day 6 - First Part result: {firstPartResult}");
              Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
@@ -22,7 +22,7 @@ namespace Day6
             watch.Reset();
             
             watch.Start();
-            var secondPartResult = SecondPart.GetResult(fileLines);
+            var secondPartResult = FirstAndSecondPart.GetResult(fileLines, 256);
             watch.Stop();
             Console.WriteLine($"Day 6 - Second Part result: {secondPartResult}");
             Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
