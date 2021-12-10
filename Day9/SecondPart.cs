@@ -11,12 +11,8 @@ namespace Day9
 
             var lowestPointCoordinates = GetLowestPointsCoordinates(matrix);
             
-            var basins = new List<int>();
-
-            foreach (var lowestPoint in lowestPointCoordinates)
-            {
-                basins.Add(GetBasin(lowestPoint, matrix));
-            }
+            var basins = lowestPointCoordinates
+                .Select(lowestPoint => GetBasin(lowestPoint, matrix)).ToList();
 
             var result = basins.OrderByDescending(x => x)
                 .Take(3)
