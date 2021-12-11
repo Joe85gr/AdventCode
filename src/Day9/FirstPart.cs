@@ -1,6 +1,6 @@
-using System.Collections.Generic;
 using System.Linq;
 using Day9.Services;
+using Library;
 
 namespace Day9
 {
@@ -8,7 +8,9 @@ namespace Day9
     {
         public static int GetResult(string[] fileLines)
         {
-            var matrix = FloorMapService.CreateMatrix(fileLines);
+            var matrix = MatrixUtility
+                .WrapMatrix(fileLines, 9)
+                .ToList();
 
             var lowestPoints = CoordinatesService
                 .GetLowestPointsCoordinates(matrix)

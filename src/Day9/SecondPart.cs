@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Day9.Services;
+using Library;
 
 namespace Day9
 {
@@ -8,7 +9,9 @@ namespace Day9
     {
         public static int GetResult(string[] fileLines)
         {
-            var matrix = FloorMapService.CreateMatrix(fileLines);
+            var matrix = MatrixUtility
+                .WrapMatrix(fileLines, 9)
+                .ToList();
 
             var lowestPointCoordinates = CoordinatesService.GetLowestPointsCoordinates(matrix);
             
@@ -32,7 +35,8 @@ namespace Day9
             return count;
         }
 
-        private static int CheckAdjacent(IReadOnlyList<List<int>> matrix, int x, int y, IDictionary<(int Row, int Col), bool> alreadyChecked)
+        private static int CheckAdjacent(IReadOnlyList<List<int>> matrix, int x, int y, 
+            IDictionary<(int Row, int Col), bool> alreadyChecked)
         {
             var count = 1;
             var currentNum = matrix[y][x];

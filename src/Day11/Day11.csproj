@@ -6,15 +6,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Update="Day9.txt">
+      <None Update="Day10.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="Tests.txt">
+      <None Update="Day11_MockData.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Day11.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Tests\Tests.csproj" />
+      <ProjectReference Include="..\Day5\Day5.csproj" />
       <ProjectReference Include="..\Library\Library.csproj" />
     </ItemGroup>
 
