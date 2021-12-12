@@ -9,7 +9,7 @@
       <None Update="Day10.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="MockData.txt">
+      <None Update="Day10_MockData.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>

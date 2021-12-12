@@ -20,18 +20,15 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Day10\Day10.csproj" />
       <ProjectReference Include="..\src\Day10\Day10.csproj" />
+      <ProjectReference Include="..\src\Day11\Day11.csproj" />
+      <ProjectReference Include="..\src\Library\Library.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Day10.Tests\MockData.txt">
+      <None Update="Day10.Tests\Day10_MockData.txt">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Day11.Tests" />
     </ItemGroup>
 
 </Project>

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Day11.Services
 {
-    public static class DumboOctopusesService
+    public static class OctopusService
     {
         public static double StartStep(List<List<int>> energyMap, HashSet<(int x, int y)> flashed)
         {

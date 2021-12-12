@@ -18,7 +18,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Tests\Tests.csproj" />
       <ProjectReference Include="..\Day5\Day5.csproj" />
       <ProjectReference Include="..\Library\Library.csproj" />
     </ItemGroup>

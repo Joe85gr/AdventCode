@@ -23,7 +23,7 @@ namespace Day11
             {
                 var flashed = new HashSet<(int x, int y)>();
                 
-                DumboOctopusesService.StartStep(energyMap, flashed);
+                OctopusService.StartStep(energyMap, flashed);
 
                 steps++;
                 

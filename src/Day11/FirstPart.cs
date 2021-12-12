@@ -20,7 +20,7 @@ namespace Day11
             {
                 var flashed = new HashSet<(int x, int y)>();
                 
-                flashes+=DumboOctopusesService.StartStep(energyMap, flashed);
+                flashes+=OctopusService.StartStep(energyMap, flashed);
             }
             
             return flashes;

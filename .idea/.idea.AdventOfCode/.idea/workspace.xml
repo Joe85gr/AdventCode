@@ -25,8 +25,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/43d8e41a76f50d28b292577de9dd4ea624d00d1c5753d17a95b4ebcec39b9/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8517f607c12a4b508364c3f896f0fe6f11da8/d0/2f518e71/Assert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8d94d2e6b253287ab59455e84e6426a47a8a36783843794d5828ee25757efa8c/Interop.IOErrors.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a814b5a57284456f7086c373f47545f46fdcf8af0b2f8ba9bab657dd72/ValueTuple.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4afdf1deed9ff75b13d6e21cddb8f3fddfcdc89691e2627d9ea0cfb865b58/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -255,16 +257,37 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639162240830</updated>
-      <workItem from="1639162252231" duration="20545000" />
+      <workItem from="1639162252231" duration="21622000" />
+      <workItem from="1639247826801" duration="682000" />
+      <workItem from="1639248792297" duration="1636000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Day11/Services/DumboOctopusesService.cs</url>
+          <line>15</line>
+          <properties documentPath="$PROJECT_DIR$/src/Day11/Services/DumboOctopusesService.cs" initialLine="15" containingFunctionPresentation="method 'StartStep'">
+            <startOffsets>
+              <option value="497" />
+            </startOffsets>
+            <endOffsets>
+              <option value="521" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
