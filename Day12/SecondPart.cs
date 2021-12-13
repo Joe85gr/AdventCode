@@ -10,15 +10,15 @@ namespace Day12
         {
             var startPoints = fileLines
                 .Where(l => l.Contains("start"))
-                .ToList();
+                .ToArray();
             
             PathService.OneSmallCaveCanBeVisitedTwice = true;
 
             var result = 0;
             foreach (var startPoint in startPoints)
             {
-                var currentPath = PathService.OrderPair(startPoint, "start").Split('-')[1];
-                result+= PathService.FindPaths(fileLines, new List<string>(), currentPath);
+                var currentCave = PathService.GetNextCave(startPoint, "start");
+                result+= PathService.FindPaths(fileLines, new List<string>(), currentCave);
             }
             
             return result;

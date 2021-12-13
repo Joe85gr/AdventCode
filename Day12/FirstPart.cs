@@ -16,7 +16,7 @@ namespace Day12
             
             foreach (var startPoint in startPoints)
             {
-                var currentPath = PathService.OrderPair(startPoint, "start").Split('-')[1];
+                var currentPath = PathService.GetNextCave(startPoint, "start");
                 result+= PathService.FindPaths(fileLines, new List<string>(), currentPath);
             }
             

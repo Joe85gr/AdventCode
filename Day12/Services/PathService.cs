@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using Library;
 
 namespace Day12.Services
 {
@@ -12,26 +10,14 @@ namespace Day12.Services
         public static int FindPaths(string[] allPairs, List<string> smallCaves, string currentCave)
         {
             var count = 0;
-            
-            var linkedPaths = allPairs
-                .Where(p => p.Contains("start") == false && p.Contains(currentCave));
 
-            List<string> pathsLeft;
-
-            var smallCaveVisitedTwice = CheckIfSmallCaveVisitedTwice(smallCaves);
-
-            if (OneSmallCaveCanBeVisitedTwice == false || smallCaveVisitedTwice)
-                pathsLeft = linkedPaths
-                    .Where(p => smallCaves.Any(s => p.Split('-').Contains(s)) == false)
-                    .ToList();
-            else pathsLeft = linkedPaths.Select(l => l).ToList();
+            var pathsLeft = SearchPathsLeft(allPairs, smallCaves, currentCave);
 
             if(char.IsLower(currentCave[0])) smallCaves.Add(currentCave);
             
             foreach (var pair in pathsLeft)
             {
-                var orderedPair = OrderPair(pair, currentCave).Split('-');
-                var nextCave = orderedPair[1];
+                var nextCave = GetNextCave(pair, currentCave);
 
                 var thisPathSmallCaves = new List<string>();
                 thisPathSmallCaves.AddRange(smallCaves);
@@ -46,15 +32,15 @@ namespace Day12.Services
 
             return count;
         }
-        public static string OrderPair(string pathLeft, string firstPart)
+        public static string GetNextCave(string pathLeft, string currentCave)
         {
             var splitPair = pathLeft.Split('-');
-            var secondPart = splitPair[0] == firstPart ? splitPair[1] : splitPair[0];
+            var nextCave = splitPair[0] == currentCave ? splitPair[1] : splitPair[0];
 
-            return firstPart + "-" + secondPart;
+            return nextCave;
         }
         
-        private static bool CheckIfSmallCaveVisitedTwice(List<string> smallCaves)
+        private static bool CheckIfSmallCaveVisitedTwice(IReadOnlyList<string> smallCaves)
         {
             var hash = new string[smallCaves.Count];
 
@@ -66,6 +52,23 @@ namespace Day12.Services
 
             return false;
         }
-        
+
+        private static IEnumerable<string> SearchPathsLeft(IEnumerable<string> allPairs, IReadOnlyList<string> smallCaves, string currentCave)
+        {
+            var linkedPaths = allPairs
+                .Where(p => p.Contains("start") == false && p.Contains(currentCave));
+
+            List<string> pathsLeft;
+
+            var smallCaveVisitedTwice = CheckIfSmallCaveVisitedTwice(smallCaves);
+            
+            if (OneSmallCaveCanBeVisitedTwice == false || smallCaveVisitedTwice)
+                pathsLeft = linkedPaths
+                    .Where(p => smallCaves.Any(s => p.Split('-').Contains(s)) == false)
+                    .ToList();
+            else pathsLeft = linkedPaths.Select(l => l).ToList();
+
+            return pathsLeft;
+        }
     }
 }
