@@ -11,7 +11,7 @@ namespace Day13
         {
             var coordinates = CoordinateService.GetCoordinates(fileLines).ToList();
 
-            var folding = FoldingService.GetAllFolding(fileLines);
+            var folding = FoldingService.GetAllFolding(fileLines).ToList();
 
             foreach (var (axis, value) in folding)
             {

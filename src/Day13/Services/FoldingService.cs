@@ -16,7 +16,7 @@ namespace Day13.Services
             foreach (var (x, y) in coordinatesMoving)
             {
                 var newCoordinate = axis == Axis.Y 
-                    ? new ValueTuple<int, int>(x, Math.Abs(foldValue-(y - foldValue))) 
+                    ? new ValueTuple<int, int>(x, Math.Abs(foldValue- (y - foldValue))) 
                     : new ValueTuple<int, int>(Math.Abs(foldValue - (x - foldValue)), y);
 
                 newCoordinates.Add(newCoordinate);
@@ -33,7 +33,7 @@ namespace Day13.Services
                 .Select(s => (s[0] == "x" ? Axis.X : Axis.Y, int.Parse(s[1])));
         }
 
-        private static IEnumerable<(int X, int Y)> GetStaticPoints(IEnumerable<(int X, int Y)> coordinates, int foldValue,Axis axis)
+        private static IEnumerable<(int X, int Y)> GetStaticPoints(IEnumerable<(int X, int Y)> coordinates, int foldValue, Axis axis)
         {
             return axis == Axis.X 
                 ? coordinates.Where(x => x.X < foldValue).ToHashSet()
