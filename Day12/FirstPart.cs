@@ -6,7 +6,7 @@ namespace Day12
 {
     public class FirstPart
     {
-        public int GetResult(string[] fileLines)
+        public static int GetResult(string[] fileLines)
         {
             var startPoints = fileLines
                 .Where(l => l.Contains("start"))
@@ -17,7 +17,7 @@ namespace Day12
             foreach (var startPoint in startPoints)
             {
                 var currentPath = PathService.GetNextCave(startPoint, "start");
-                result+= PathService.FindPaths(fileLines, new List<string>(), currentPath);
+                result+= PathService.FindPaths(fileLines, new Dictionary<string, byte>(), currentPath);
             }
             
             return result;

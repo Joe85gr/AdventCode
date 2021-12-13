@@ -37,6 +37,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c71347a574592df4eb61c9193cbef2b55f50182e37df5b8e7d1c57cb624cb/Char.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8d94d2e6b253287ab59455e84e6426a47a8a36783843794d5828ee25757efa8c/Interop.IOErrors.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/214b9bd594762c651cdd6eb3b439429e25cba1d0c6dfc5aceed4c28301b55c/ValueListBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9882fb0e2b986c3ba64cced95d2d159ceffd3d9ce1414158cae9d23de1a5c3/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/89a41d0afb2d726aade60f6debc645cf1c45ceb8988a40181965cf35c71/Span.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -287,7 +288,7 @@
       <workItem from="1639162252231" duration="21622000" />
       <workItem from="1639247826801" duration="682000" />
       <workItem from="1639248792297" duration="18340000" />
-      <workItem from="1639348134718" duration="27440000" />
+      <workItem from="1639348134718" duration="28832000" />
     </task>
     <servers />
   </component>
@@ -320,6 +321,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Day12/SecondPart.cs</url>
+          <line>19</line>
+          <properties documentPath="$PROJECT_DIR$/Day12/SecondPart.cs" initialLine="19" containingFunctionPresentation="method 'GetResult'">
+            <startOffsets>
+              <option value="497" />
+            </startOffsets>
+            <endOffsets>
+              <option value="560" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Day12/FirstPart.cs</url>
+          <line>18</line>
+          <properties documentPath="$PROJECT_DIR$/Day12/FirstPart.cs" initialLine="18" containingFunctionPresentation="method 'GetResult'">
+            <startOffsets>
+              <option value="433" />
+            </startOffsets>
+            <endOffsets>
+              <option value="496" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

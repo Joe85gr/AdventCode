@@ -7,9 +7,6 @@ namespace Day12
     {
         private const string FilePath = "Day12.txt";
 
-        private static readonly FirstPart FirstPart = new();
-        private static readonly SecondPart SecondPart = new();
-        
         private static void Main()
         {
             var fileLines = File.ReadAllLines(FilePath);
