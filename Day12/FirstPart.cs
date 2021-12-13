@@ -16,9 +16,9 @@ namespace Day12
 
             foreach (var startPoint in startPoints)
             {
+                var processed = new Dictionary<string, int>() {{"start", 1}};
                 var pathSoFar = PathService.OrderPair(startPoint, "start");
-                var alreadyProcessed = new HashSet<string>{"start"};
-                var startPointPaths = PathService.FindPaths(fileLines, pathSoFar, alreadyProcessed);
+                var startPointPaths = PathService.FindPaths(fileLines, pathSoFar, processed);
                 
                 allPaths.UnionWith(startPointPaths);
             }
