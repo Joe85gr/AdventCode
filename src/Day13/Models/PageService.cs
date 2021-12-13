@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Day13.Models
 {
-    public class PageService
+    public static class PageService
     {
-        private static void PrintPage(List<(int X, int Y)> coordinates)
+        public static void PrintPage(List<(int X, int Y)> coordinates)
         {
             var xMax = coordinates.Max(c => c.X) + 1;
             var yMax = coordinates.Max(c => c.Y) + 1;

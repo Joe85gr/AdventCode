@@ -10,19 +10,14 @@ namespace Day13
         {
             var coordinates = CoordinateService.GetCoordinates(fileLines).ToList();
 
-            var folding = FoldingService.GetFolding(fileLines);
+            var (axis, foldingValue) = FoldingService.GetFolding(fileLines).First();
 
             var pointsCount = new List<int>();
             
-            foreach (var (axis, value) in folding)
-            {
-                coordinates = FoldingService.Fold(coordinates, value, axis).ToList();
-                
-                pointsCount.Add(coordinates.Count);
-                
-                //PrintPage(coordinates);
-            }
-
+            coordinates = FoldingService.Fold(coordinates, foldingValue, axis).ToList();
+            
+            pointsCount.Add(coordinates.Count);
+            
             return pointsCount.First();
         }
     }

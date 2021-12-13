@@ -36,7 +36,5 @@ namespace Day13.Services
                 .Select(s => s.Split('='))
                 .Select(s => (s[0] == "x" ? Axis.X : Axis.Y, int.Parse(s[1])));
         }
-        
-
     }
 }
