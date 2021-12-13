@@ -12,20 +12,14 @@ namespace Day12
                 .Where(l => l.Contains("start"))
                 .ToList();
 
-            var allPaths = new HashSet<string>();
-
+            var result = 0;
+            
             foreach (var startPoint in startPoints)
             {
-                var processed = new Dictionary<string, int>() {{"start", 1}};
-                var pathSoFar = PathService.OrderPair(startPoint, "start");
-                var startPointPaths = PathService.FindPaths(fileLines, pathSoFar, processed);
-                
-                allPaths.UnionWith(startPointPaths);
+                var currentPath = PathService.OrderPair(startPoint, "start").Split('-')[1];
+                result+= PathService.FindPaths(fileLines, new List<string>(), currentPath);
             }
             
-            var result = allPaths
-                .Count(p => p.Replace("start", "").Replace("end", "").ToCharArray().Any(char.IsLower));
-
             return result;
         }
     }

@@ -5,7 +5,7 @@ namespace Day12
 {
     public static class Program
     {
-        private const string FilePath = "Day12.txt";
+        private const string FilePath = "Day12_MockData.txt";
 
         private static readonly FirstPart FirstPart = new();
         private static readonly SecondPart SecondPart = new();

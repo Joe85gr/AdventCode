@@ -12,21 +12,15 @@ namespace Day12
                 .Where(l => l.Contains("start"))
                 .ToList();
             
-            var allPaths = new HashSet<string>();
-
             PathService.OneSmallCaveCanBeVisitedTwice = true;
-            
+
+            var result = 0;
             foreach (var startPoint in startPoints)
             {
-                var alreadyProcessed = new Dictionary<string, int>() {{"start", 1}};
-                var pathSoFar = PathService.OrderPair(startPoint, "start");
-                var startPointPaths = PathService.FindPaths(fileLines, pathSoFar, alreadyProcessed);
-                
-                allPaths.UnionWith(startPointPaths);
+                var currentPath = PathService.OrderPair(startPoint, "start").Split('-')[1];
+                result+= PathService.FindPaths(fileLines, new List<string>(), currentPath);
             }
             
-            var result = allPaths.Count;
-
             return result;
         }
     }

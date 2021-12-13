@@ -25,17 +25,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/43d8e41a76f50d28b292577de9dd4ea624d00d1c5753d17a95b4ebcec39b9/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8517f607c12a4b508364c3f896f0fe6f11da8/d0/2f518e71/Assert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d68546c6f149d0df32eba847f7df8c5ef7537c4f847f3e6e80925f974a13d4b/Buffer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d1a313ced8e048f091676da22c2a7567df5f1c91b4b0b7128e8831aa7be0845/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fcc9127612a94635a5dd95167dc88a2f65400/bf/18fab2ad/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dd2d104f8f87b497ce35d1ada8b99d9b7ce25b4f9893cd2e2ccb2d35d79/String.Manipulation.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8d94d2e6b253287ab59455e84e6426a47a8a36783843794d5828ee25757efa8c/Interop.IOErrors.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/26f584213b81ee375def8b80d3bb3a5808cd73f4eed7d1589f876f0cea872/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/214b9bd594762c651cdd6eb3b439429e25cba1d0c6dfc5aceed4c28301b55c/ValueListBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a814b5a57284456f7086c373f47545f46fdcf8af0b2f8ba9bab657dd72/ValueTuple.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4afdf1deed9ff75b13d6e21cddb8f3fddfcdc89691e2627d9ea0cfb865b58/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/43d8e41a76f50d28b292577de9dd4ea624d00d1c5753d17a95b4ebcec39b9/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8517f607c12a4b508364c3f896f0fe6f11da8/d0/2f518e71/Assert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d1a313ced8e048f091676da22c2a7567df5f1c91b4b0b7128e8831aa7be0845/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c71347a574592df4eb61c9193cbef2b55f50182e37df5b8e7d1c57cb624cb/Char.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8d94d2e6b253287ab59455e84e6426a47a8a36783843794d5828ee25757efa8c/Interop.IOErrors.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/214b9bd594762c651cdd6eb3b439429e25cba1d0c6dfc5aceed4c28301b55c/ValueListBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/89a41d0afb2d726aade60f6debc645cf1c45ceb8988a40181965cf35c71/Span.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -286,7 +287,7 @@
       <workItem from="1639162252231" duration="21622000" />
       <workItem from="1639247826801" duration="682000" />
       <workItem from="1639248792297" duration="18340000" />
-      <workItem from="1639348134718" duration="6978000" />
+      <workItem from="1639348134718" duration="19388000" />
     </task>
     <servers />
   </component>
@@ -308,32 +309,6 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Day12/FirstPart.cs</url>
-          <line>27</line>
-          <properties documentPath="$PROJECT_DIR$/Day12/FirstPart.cs" initialLine="27" containingFunctionPresentation="method 'GetResult'">
-            <startOffsets>
-              <option value="827" />
-            </startOffsets>
-            <endOffsets>
-              <option value="841" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Day12/Program.cs</url>
-          <line>24</line>
-          <properties documentPath="$PROJECT_DIR$/Day12/Program.cs" initialLine="24" containingFunctionPresentation="method 'Main'">
-            <startOffsets>
-              <option value="769" />
-            </startOffsets>
-            <endOffsets>
-              <option value="824" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dd2d104f8f87b497ce35d1ada8b99d9b7ce25b4f9893cd2e2ccb2d35d79/String.Manipulation.cs</url>
           <line>1580</line>
           <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dd2d104f8f87b497ce35d1ada8b99d9b7ce25b4f9893cd2e2ccb2d35d79/String.Manipulation.cs" initialLine="1580" containingFunctionPresentation="method 'MakeSeparatorList'">
@@ -345,6 +320,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Day12/SecondPart.cs</url>
+          <line>20</line>
+          <properties documentPath="$PROJECT_DIR$/Day12/SecondPart.cs" initialLine="20" containingFunctionPresentation="method 'GetResult'">
+            <startOffsets>
+              <option value="588" />
+            </startOffsets>
+            <endOffsets>
+              <option value="663" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

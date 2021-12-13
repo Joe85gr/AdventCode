@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Library;
@@ -7,70 +8,53 @@ namespace Day12.Services
     public static class PathService
     {
         public static bool OneSmallCaveCanBeVisitedTwice = false;
-        public static IEnumerable<string> FindPaths(string[] allPairs, string pathSoFar, Dictionary<string, int> alreadyProcessed)
+
+        public static int FindPaths(string[] allPairs, List<string> smallCaves, string currentCave)
         {
-            var paths = new HashSet<string>();
-
-            var splitPath = pathSoFar.Split('-');
+            var count = 0;
             
-            var end = splitPath[^1];
+            var linkedPaths = allPairs
+                .Where(p => p.Contains("start") == false && p.Contains(currentCave));
 
-            var pairsLeft = new List<string>();
+            List<string> pathsLeft;
 
-            pairsLeft = OneSmallCaveCanBeVisitedTwice 
-                ? GetAllPairs2(allPairs, alreadyProcessed, end).ToList() : 
-                GetAllPairs1(allPairs, alreadyProcessed, end).ToList();
+            var smallCaveVisitedTwice = smallCaves
+                .GroupBy(s => s)
+                .Select(s => s.Count())
+                .Any(s => s > 1);
+
+            if (OneSmallCaveCanBeVisitedTwice == false || smallCaveVisitedTwice)
+                pathsLeft = linkedPaths
+                    .Where(p => smallCaves.Any(s => p.Split('-').Contains(s)) == false)
+                    .ToList();
+            else pathsLeft = linkedPaths.Select(l => l).ToList();
+
+            if(char.IsLower(currentCave[0])) smallCaves.Add(currentCave);
             
-            if (char.IsLower(end[^1]))
-                if (alreadyProcessed.ContainsKey(end))
-                    alreadyProcessed[end]++;
-                else alreadyProcessed.Add(end, 1);
-
-            foreach (var pair in pairsLeft)
+            foreach (var pair in pathsLeft)
             {
-                var processedSoFar = new Dictionary<string, int>();
-                processedSoFar.AddRange(alreadyProcessed);
-                
-                var orderedPair = OrderPair(pair, end);
-                if (orderedPair == $"{end}-end") paths.Add(pathSoFar + "-end");
-                else if (pair.Contains("end") == false)
-                {
-                    var charToAdd = orderedPair.Split('-')[^1];
-                    paths.UnionWith(FindPaths(allPairs, $"{pathSoFar}-{charToAdd}", processedSoFar));
-                }
-            }
-            
-            return paths;
-        }
+                var orderedPair = OrderPair(pair, currentCave).Split('-');
+                var nextCave = orderedPair[1];
 
+                var thisPathSmallCaves = new List<string>();
+                thisPathSmallCaves.AddRange(smallCaves);
+
+                if (nextCave == "end")
+                {
+                    if (OneSmallCaveCanBeVisitedTwice) count++;
+                    else if (thisPathSmallCaves.Any()) count++;
+                }
+                else count+=FindPaths(allPairs, thisPathSmallCaves, nextCave);
+            }
+
+            return count;
+        }
         public static string OrderPair(string pathLeft, string firstPart)
         {
             var splitPair = pathLeft.Split('-');
             var secondPart = splitPair[0] == firstPart ? splitPair[1] : splitPair[0];
-            
+
             return firstPart + "-" + secondPart;
-        }
-
-        private static IEnumerable<string> GetAllPairs1(IEnumerable<string> allPairs, Dictionary<string, int> alreadyProcessed, string end)
-        {
-             return allPairs
-                .Where(p => p.Contains(end) && alreadyProcessed.Any(a => p.Split('-').Contains(a.Key)) == false)
-                .ToList();
-        }
-        
-        private static IEnumerable<string> GetAllPairs2(string[] allPairs, Dictionary<string, int> alreadyProcessed, string end)
-        {
-            var smallCaveAlreadyVisitedTwice = alreadyProcessed
-                .Where(a => a.Key.Contains("start") == false && a.Key.Contains("end") == false)
-                .Any(a => a.Value > 1);
-
-            if (smallCaveAlreadyVisitedTwice)
-            {
-                return allPairs
-                    .Where(p => p.Contains(end) && alreadyProcessed.Any(a => p.Split('-').Contains(a.Key)) == false);
-            }
-
-            return allPairs.Where(p => p.Contains(end) && p.Contains("start") == false);
         }
     }
 }
