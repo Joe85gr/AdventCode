@@ -18,10 +18,7 @@ namespace Day12.Services
 
             List<string> pathsLeft;
 
-            var smallCaveVisitedTwice = smallCaves
-                .GroupBy(s => s)
-                .Select(s => s.Count())
-                .Any(s => s > 1);
+            var smallCaveVisitedTwice = CheckIfSmallCaveVisitedTwice(smallCaves);
 
             if (OneSmallCaveCanBeVisitedTwice == false || smallCaveVisitedTwice)
                 pathsLeft = linkedPaths
@@ -56,5 +53,19 @@ namespace Day12.Services
 
             return firstPart + "-" + secondPart;
         }
+        
+        private static bool CheckIfSmallCaveVisitedTwice(List<string> smallCaves)
+        {
+            var hash = new string[smallCaves.Count];
+
+            for (var i = 0; i < smallCaves.Count; i++)
+            {
+                if (hash.Contains(smallCaves[i])) return true;
+                hash[i] = smallCaves[i];
+            }
+
+            return false;
+        }
+        
     }
 }
