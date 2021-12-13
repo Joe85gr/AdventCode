@@ -13,6 +13,7 @@
     <projectFile>src/Day10/Day10.csproj</projectFile>
     <projectFile>src/Day11/Day11.csproj</projectFile>
     <projectFile>Day12/Day12.csproj</projectFile>
+    <projectFile>src/Day13/Day13.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
@@ -28,6 +29,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d68546c6f149d0df32eba847f7df8c5ef7537c4f847f3e6e80925f974a13d4b/Buffer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fcc9127612a94635a5dd95167dc88a2f65400/bf/18fab2ad/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/dd2d104f8f87b497ce35d1ada8b99d9b7ce25b4f9893cd2e2ccb2d35d79/String.Manipulation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fcc9127612a94635a5dd95167dc88a2f65400/54/cc586935/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/26f584213b81ee375def8b80d3bb3a5808cd73f4eed7d1589f876f0cea872/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a814b5a57284456f7086c373f47545f46fdcf8af0b2f8ba9bab657dd72/ValueTuple.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4afdf1deed9ff75b13d6e21cddb8f3fddfcdc89691e2627d9ea0cfb865b58/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
@@ -59,7 +61,7 @@
     <property name="settings.editor.selected.configurable" value="ReSpellerSettingsId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.Day12">
+  <component name="RunManager" selected=".NET Project.Day13">
     <configuration name="Day1" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -123,6 +125,24 @@
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Day12/Day12.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="Day13" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/Day13/Day13.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -288,7 +308,7 @@
       <workItem from="1639162252231" duration="21622000" />
       <workItem from="1639247826801" duration="682000" />
       <workItem from="1639248792297" duration="18340000" />
-      <workItem from="1639348134718" duration="28832000" />
+      <workItem from="1639348134718" duration="58857000" />
     </task>
     <servers />
   </component>
@@ -323,19 +343,6 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Day12/SecondPart.cs</url>
-          <line>19</line>
-          <properties documentPath="$PROJECT_DIR$/Day12/SecondPart.cs" initialLine="19" containingFunctionPresentation="method 'GetResult'">
-            <startOffsets>
-              <option value="497" />
-            </startOffsets>
-            <endOffsets>
-              <option value="560" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Day12/FirstPart.cs</url>
           <line>18</line>
           <properties documentPath="$PROJECT_DIR$/Day12/FirstPart.cs" initialLine="18" containingFunctionPresentation="method 'GetResult'">
@@ -347,6 +354,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Day13/FirstPart.cs</url>
+          <line>47</line>
+          <properties documentPath="$PROJECT_DIR$/src/Day13/FirstPart.cs" initialLine="47" containingFunctionPresentation="method 'GetResult'">
+            <startOffsets>
+              <option value="1298" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1336" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -17,7 +17,7 @@ namespace Day12
             foreach (var startPoint in startPoints)
             {
                 var currentPath = PathService.GetNextCave(startPoint, "start");
-                result+= PathService.FindPaths(fileLines, new Dictionary<string, byte>(), currentPath);
+                result+= PathService.FindPaths(fileLines, new HashSet<string>(), currentPath, false);
             }
             
             return result;
