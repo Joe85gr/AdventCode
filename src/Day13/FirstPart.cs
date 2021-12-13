@@ -10,7 +10,7 @@ namespace Day13
         {
             var coordinates = CoordinateService.GetCoordinates(fileLines).ToList();
 
-            var (axis, foldingValue) = FoldingService.GetFolding(fileLines).First();
+            var (axis, foldingValue) = FoldingService.GetAllFolding(fileLines).First();
 
             var pointsCount = new List<int>();
             

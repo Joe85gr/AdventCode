@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Day13.Services
 {
-    public class CoordinateService
+    public static class CoordinateService
     {
         public static IEnumerable<(int X, int Y)> GetCoordinates(IEnumerable<string> fileLines)
         {

@@ -19,9 +19,8 @@ namespace Day13
             Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
             
             watch.Start();
-            var secondPartResult = SecondPart.GetResult(fileLines);
+            SecondPart.PrintResult(fileLines);
             watch.Stop();
-            Console.WriteLine($"Day 13 - Second Part result: {secondPartResult}");
             Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
         }
     }

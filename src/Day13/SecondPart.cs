@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 using System.Linq;
 using Day13.Models;
 using Day13.Services;
@@ -7,24 +7,19 @@ namespace Day13
 {
     public static class SecondPart
     {
-        public static int GetResult(string[] fileLines)
+        public static void PrintResult(string[] fileLines)
         {
             var coordinates = CoordinateService.GetCoordinates(fileLines).ToList();
 
-            var folding = FoldingService.GetFolding(fileLines);
+            var folding = FoldingService.GetAllFolding(fileLines);
 
-            var pointsCount = new List<int>();
-            
             foreach (var (axis, value) in folding)
             {
                 coordinates = FoldingService.Fold(coordinates, value, axis).ToList();
-                
-                pointsCount.Add(coordinates.Count);
             }
 
-            PageService.PrintPage(coordinates);
-            
-            return pointsCount.First();
+            Console.WriteLine("Day 13 - Second Part result:");
+            Print.PrintPage(coordinates);
         }
     }
 }

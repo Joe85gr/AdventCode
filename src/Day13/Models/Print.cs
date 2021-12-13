@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Day13.Models
 {
-    public static class PageService
+    public static class Print
     {
         public static void PrintPage(List<(int X, int Y)> coordinates)
         {
@@ -20,8 +20,7 @@ namespace Day13.Models
                 
                 for (var x = 0; x < xMax; x++)
                 {
-                    if (coordinates.Contains((x, y))) builder.Append("# ");
-                    else builder.Append(". ");
+                    builder.Append(coordinates.Contains((x, y)) ? "# " : ". ");
                 }
                 
                 Console.WriteLine(builder);
