@@ -16,8 +16,8 @@ namespace Day13.Services
             foreach (var (x, y) in coordinatesMoving)
             {
                 var newCoordinate = axis == Axis.Y 
-                    ? new ValueTuple<int, int>(x, Math.Abs(foldValue- (y - foldValue))) 
-                    : new ValueTuple<int, int>(Math.Abs(foldValue - (x - foldValue)), y);
+                    ? new ValueTuple<int, int>(x, foldValue- (y - foldValue)) 
+                    : new ValueTuple<int, int>(foldValue - (x - foldValue), y);
 
                 newCoordinates.Add(newCoordinate);
             }

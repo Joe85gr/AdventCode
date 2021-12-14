@@ -11,7 +11,7 @@ namespace Tests.Day10.Tests
         [Fact]
         public void GetResult_ReturnsCorrectTotalErrorScore()
         {
-            var fileLines = File.ReadAllLines("MockData.txt");
+            var fileLines = File.ReadAllLines("Day10_MockData.txt");
 
             const int expected = 26397;
             var actual = _firstPart.GetResult(fileLines);
