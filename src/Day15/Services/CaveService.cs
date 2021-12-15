@@ -10,25 +10,25 @@ public static class CaveService
 
         var riskLevelMap = Enumerable
             .Range(0, 5)
-            .SelectMany(col =>Enumerable.Range(0, 5).SelectMany(row =>
-                input.Select(l =>
-                {
-                    var ((x, y), value) = l;
-                    (int x, int y) key = (x + size * col, y + size * row);
-                    var newValue = (value + col + row - 1) % 9 + 1;
-                    return (key, value: newValue);
-                })))
+            .SelectMany(col =>Enumerable.Range(0, 5)
+                .SelectMany(row =>
+                input.Select(l => AddValue(l, size, col, row))))
             .ToDictionary(d => d.key, d => d.value );
         
 
         return riskLevelMap;
     }
-    
-    public static int AddValue(int value, int adding)
+
+    private static ((int x, int y) key, double value) AddValue(KeyValuePair<(int x, int y), double> riskValue, 
+        double size, int col, int row)
     {
-        var newValue = value + adding;
-        if (newValue > 9) newValue = newValue - 9;
-        return newValue;
+        var ((x, y), value) = riskValue;
+        var newKey = (Convert.ToInt32(x + size * col), Convert.ToInt32(y + size * row));
+        var newValue = (value + col + row - 1) % 9 + 1;
+        
+        var keyPair = (newKey, newValue);
+
+        return keyPair;
     }
     
     public static Dictionary<(int x, int y), double> GetRiskLevels(string[] fileLines)
