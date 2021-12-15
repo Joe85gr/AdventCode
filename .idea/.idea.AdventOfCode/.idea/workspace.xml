@@ -389,7 +389,7 @@
       <workItem from="1639577947999" duration="39000" />
       <workItem from="1639578087747" duration="106000" />
       <workItem from="1639578411442" duration="2713000" />
-      <workItem from="1639581227013" duration="6503000" />
+      <workItem from="1639581227013" duration="11487000" />
     </task>
     <servers />
   </component>
@@ -428,6 +428,32 @@
           <line>18</line>
           <properties documentPath="$PROJECT_DIR$/Day12/FirstPart.cs" initialLine="18" containingFunctionPresentation="method 'GetResult'" />
           <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Day15/Services/CaveService.cs</url>
+          <line>22</line>
+          <properties documentPath="$PROJECT_DIR$/src/Day15/Services/CaveService.cs" initialLine="30" containingFunctionPresentation="method 'GetRiskLevels2'">
+            <startOffsets>
+              <option value="706" />
+            </startOffsets>
+            <endOffsets>
+              <option value="726" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Day15/Services/RiskService.cs</url>
+          <line>20</line>
+          <properties documentPath="$PROJECT_DIR$/src/Day15/Services/RiskService.cs" initialLine="35" containingFunctionPresentation="method 'Dijkstra'">
+            <startOffsets>
+              <option value="676" />
+            </startOffsets>
+            <endOffsets>
+              <option value="719" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="122" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

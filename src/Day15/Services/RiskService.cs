@@ -14,21 +14,7 @@ public static class RiskService
 
         while (queue.Count > 0)
         {
-            var current = queue.Dequeue();
-            visited.Add(current);
-
-            var neighbours = GetNeighbours(riskLevelMap, current, visited);
-
-            foreach (var (neighbourCoordinates, neighbourDistance) in neighbours)
-            {
-                var newDistance = distances[current] + neighbourDistance;
-
-                if (newDistance >= distances[neighbourCoordinates]) continue;
-
-                distances[neighbourCoordinates] = newDistance;
-
-                queue.Enqueue(neighbourCoordinates, newDistance);
-            }
+            FindShotestPath(riskLevelMap, distances, visited, queue);
         }
 
         var totalRiskPath = distances.Last().Value;
@@ -57,5 +43,28 @@ public static class RiskService
             neighbours.Add((start.x, start.y + 1), riskLevelMap[(start.x, start.y + 1)]);
 
         return neighbours;
+    }
+
+    private static void FindShotestPath(IReadOnlyDictionary<(int x, int y), double> riskLevelMap, IDictionary<(int x, int y), double> distances,
+        HashSet<(int x, int y)> visited, PriorityQueue<(int x, int y), double> queue)
+    {
+        queue.TryDequeue(out var current, out var value);
+        
+        if(distances[current] > 0 && distances[current] < value) return;
+
+        visited.Add(current);
+
+        var neighbours = GetNeighbours(riskLevelMap, current, visited);
+        
+        foreach (var (neighbourCoordinates, neighbourDistance) in neighbours)
+        {
+            var newDistance = distances[current] + neighbourDistance;
+
+            if (newDistance >= distances[neighbourCoordinates]) continue;
+
+            distances[neighbourCoordinates] = newDistance;
+
+            queue.Enqueue(neighbourCoordinates, newDistance);
+        }
     }
 }

@@ -2,11 +2,11 @@ using Day15.Services;
 
 namespace Day15;
 
-public static class FirstPart
+public static class SecondPart
 {
     public static double GetResult(string[] fileLines)
     {
-        var riskLevelMap = CaveService.GetRiskLevels(fileLines);
+        var riskLevelMap = CaveService.GetRiskLevelsPart2(fileLines);
         var start = riskLevelMap.First();
         var distances = GenerateDistances(riskLevelMap, start.Key);
 
