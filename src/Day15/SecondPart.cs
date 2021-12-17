@@ -10,7 +10,7 @@ public static class SecondPart
         var start = riskLevelMap.First();
         var distances = GenerateDistances(riskLevelMap, start.Key);
 
-        var totalRiskPath = RiskService.Dijkstra(riskLevelMap, distances, start);
+        var totalRiskPath = DijkstraService.CalculateLowestRiskPath(riskLevelMap, distances, start);
         
         return totalRiskPath;
     }

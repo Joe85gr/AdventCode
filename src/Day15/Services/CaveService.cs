@@ -4,18 +4,17 @@ public static class CaveService
 {
     public static Dictionary<(int x, int y), double> GetRiskLevelsPart2(string[] fileLines)
     {
-        var input = GetRiskLevels(fileLines);
+        var riskLevels = GetRiskLevels(fileLines);
 
         var size = fileLines.Length;
 
         var riskLevelMap = Enumerable
             .Range(0, 5)
-            .SelectMany(col =>Enumerable.Range(0, 5)
+            .SelectMany(col => Enumerable.Range(0, 5)
                 .SelectMany(row =>
-                input.Select(l => AddValue(l, size, col, row))))
+                    riskLevels.Select(l => AddValue(l, size, col, row))))
             .ToDictionary(d => d.key, d => d.value );
         
-
         return riskLevelMap;
     }
 

@@ -18,3 +18,4 @@ var secondPartResult = SecondPart.GetResult(fileLines);
 watch.Stop();
 Console.WriteLine($"Day 15 - Second Part result: {secondPartResult}");
 Console.WriteLine($"Elapsed time: {watch.ElapsedMilliseconds}ms");
+

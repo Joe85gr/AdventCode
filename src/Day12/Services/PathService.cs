@@ -16,7 +16,7 @@ namespace Day12.Services
 
             if (smallCaveVisitedTwice == false) smallCaveVisitedTwice = smallCaves.Contains(currentCave);
             
-            AddSmallCave(smallCaves, currentCave);
+            if (char.IsLower(currentCave[0])) smallCaves.Add(currentCave);
             
             foreach (var pair in pathsLeft)
             {
@@ -25,12 +25,8 @@ namespace Day12.Services
                 var thisPathSmallCaves = new HashSet<string>();
                 thisPathSmallCaves.UnionWith(smallCaves);
 
-                if (nextCave == "end")
-                {
-                    if (OneSmallCaveCanBeVisitedTwice) count++;
-                    else if (thisPathSmallCaves.Any()) count++;
-                }
-                else count+=FindPaths(allPairs, thisPathSmallCaves, nextCave, smallCaveVisitedTwice);
+                if(nextCave != "end") count+=FindPaths(allPairs, thisPathSmallCaves, nextCave, smallCaveVisitedTwice);
+                else if (OneSmallCaveCanBeVisitedTwice || thisPathSmallCaves.Any()) count++;
             }
 
             return count;
@@ -52,8 +48,6 @@ namespace Day12.Services
 
             List<string> pathsLeft;
 
-            //var smallCaveVisitedTwice = CheckIfSmallCaveVisitedTwice(smallCaves);
-            
             if (OneSmallCaveCanBeVisitedTwice == false || smallCaveVisitedTwice)
                 pathsLeft = linkedPaths
                     .Where(p => smallCaves.Any(s => p.Split('-').Contains(s)) == false)
@@ -61,13 +55,6 @@ namespace Day12.Services
             else pathsLeft = linkedPaths.Select(l => l).ToList();
 
             return pathsLeft;
-        }
-
-        private static void AddSmallCave(ISet<string> smallCaves, string currentCave)
-        {
-            if (char.IsLower(currentCave[0]) == false) return;
-            
-            smallCaves.Add(currentCave);
         }
     }
 }

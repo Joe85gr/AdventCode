@@ -12,7 +12,7 @@ namespace Tests.Day14.Tests
         [Fact]
         public void GetPairInsertions_ReturnsCorrectPair()
         {
-            var fileLines = new[] {"CH -> B", "HH -> N"};
+            var fileLines = new[] {"","", "CH -> B", "HH -> N"};
 
             var expected = new Dictionary<string, char>() {{"CH", 'B'}, {"HH", 'N'}};
             
