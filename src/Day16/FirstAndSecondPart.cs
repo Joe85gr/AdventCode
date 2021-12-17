@@ -2,7 +2,7 @@ using Day16.Services;
 
 namespace Day16;
 
-public static class FirstPart
+public static class FirstAndSecondPart
 {
     public static (double version, double value) GetResult(IEnumerable<string> fileLines)
     {
