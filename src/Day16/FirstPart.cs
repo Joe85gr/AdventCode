@@ -4,12 +4,12 @@ namespace Day16;
 
 public static class FirstPart
 {
-    public static double GetResult(string[] fileLines)
+    public static (double version, double value) GetResult(IEnumerable<string> fileLines)
     {
         var bitsQueue = QueueService.GeneratePriorityQueue(fileLines);
 
-        var version = TransmissionService.GetVersion(bitsQueue);
+        var (version, value) = TransmissionService.GetVersion(bitsQueue);
         
-        return version;
+        return (version, value);
     }
 }
