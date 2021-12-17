@@ -1,6 +1,6 @@
 ﻿using Day16;
 
-const string filePath = "Day16_MockData.txt";
+const string filePath = "Day16.txt";
 
 var fileLines = File.ReadAllLines(filePath);
 var watch = new System.Diagnostics.Stopwatch();

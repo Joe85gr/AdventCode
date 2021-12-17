@@ -20,7 +20,6 @@ public static class TransmissionService
             {
                 var literal = CalculateLiteral(queue);
                 values += literal;
-                if(isSubPacket) break;
             }
             else
             {
@@ -55,6 +54,9 @@ public static class TransmissionService
                 
                 values += ProcessTypeIds(type, valuesList);
             }
+            
+            if(isSubPacket) break;
+
         }
 
         return (version, values);
@@ -63,7 +65,7 @@ public static class TransmissionService
     private static double ProcessTypeIds(TypeId type, IReadOnlyList<double> values) => type switch
     {
         TypeId.Sum => values.Sum(),
-        TypeId.Product => values.Aggregate(1d, (curr, next) => curr * next),
+        TypeId.Product => values.Count == 1 ? values.First() : values.Aggregate(1d, (curr, next) => curr * next),
         TypeId.Minimum => values.Min(),
         TypeId.Maximum => values.Max(),
         TypeId.GreaterThan => values.Count == 1 || values[0] > values[1] ? 1 : 0,
