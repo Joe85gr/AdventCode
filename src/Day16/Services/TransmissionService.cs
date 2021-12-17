@@ -9,11 +9,11 @@ public static class TransmissionService
     public static (double version, double valuesSum) GetVersion(PriorityQueue<char, int> queue, bool isSubPacket = false)
     {
         var values = 0d;
-        var version = 0d;
+        var versions = 0d;
         
         while (queue.Count > 6)
         {
-            version += Converter.BitsToInt(QueueService.GetBits(queue, 3));
+            versions += Converter.BitsToInt(QueueService.GetBits(queue, 3));
             var type = (TypeId)Converter.BitsToInt(QueueService.GetBits(queue, 3));
 
             if (type == TypeId.Literal)
@@ -23,54 +23,64 @@ public static class TransmissionService
             }
             else
             {
-                var lenghtTypeId = queue.Dequeue();
-                
-                var valuesList = new List<double>();
-
-                if (lenghtTypeId == '0')
-                {
-                    var totalLenght = Converter.BitsToInt(QueueService.GetBits(queue, 15));
-                    var subQueue = QueueService.CreateNewQueue(queue, totalLenght);
-                    
-                    while (subQueue.Count > 6)
-                    {
-                        var (ver, val) = GetVersion(subQueue, true);
-                        version += ver;
-                        valuesList.Add(val);
-                    }
-                }
-                else
-                {
-                    var subPackets = Converter.BitsToInt(QueueService.GetBits(queue, 11));
-                    
-                    for (var i = 0; i < subPackets; i++)
-                    {
-                        if (type == TypeId.Product) version += 0;
-                        var (ver, val) = GetVersion(queue, true);
-                        version += ver;
-                        valuesList.Add(val);
-                    }
-                }
-                
-                values += ProcessTypeIds(type, valuesList);
+                var (subPacketsVersions, subPacketsValues) = ProcessOperator(queue, type);
+                versions += subPacketsVersions;
+                values += subPacketsValues;
             }
             
             if(isSubPacket) break;
 
         }
 
-        return (version, values);
+        return (versions, values);
+    }
+
+    private static (double version, double values) ProcessOperator(PriorityQueue<char, int> queue, TypeId type)
+    {
+        var versions = 0d;
+        var lenghtTypeId = queue.Dequeue();
+                
+        var valuesList = new List<double>();
+
+        if (lenghtTypeId == '0')
+        {
+            var totalLenght = Converter.BitsToInt(QueueService.GetBits(queue, 15));
+            var subQueue = QueueService.CreateNewQueue(queue, totalLenght);
+                    
+            while (subQueue.Count > 6)
+            {
+                var (ver, val) = GetVersion(subQueue, true);
+                versions += ver;
+                valuesList.Add(val);
+            }
+        }
+        else
+        {
+            var subPackets = Converter.BitsToInt(QueueService.GetBits(queue, 11));
+                    
+            for (var i = 0; i < subPackets; i++)
+            {
+                if (type == TypeId.Product) versions += 0;
+                var (ver, val) = GetVersion(queue, true);
+                versions += ver;
+                valuesList.Add(val);
+            }
+        }
+        
+        var values = ProcessTypeIds(type, valuesList);
+
+        return (versions, values);
     }
     
     private static double ProcessTypeIds(TypeId type, IReadOnlyList<double> values) => type switch
     {
         TypeId.Sum => values.Sum(),
-        TypeId.Product => values.Count == 1 ? values.First() : values.Aggregate(1d, (curr, next) => curr * next),
+        TypeId.Product => values.Count == 1 ? values[0] : values.Aggregate(1d, (curr, next) => curr * next),
         TypeId.Minimum => values.Min(),
         TypeId.Maximum => values.Max(),
         TypeId.GreaterThan => values.Count == 1 || values[0] > values[1] ? 1 : 0,
         TypeId.LessThan => values.Count == 1 || values[0] < values[1] ? 1 : 0,
-        TypeId.EqualTo => values.Count == 1 || values[0] == values[1] ? 1 : 0,
+        TypeId.EqualTo => values.Count == 1 || Math.Abs(values[0] - values[1]) == 0 ? 1 : 0,
         _ => throw new ArgumentOutOfRangeException(nameof(type), $"Not expected typeId value: {type.ToString()}"),
     };
     

@@ -8,8 +8,8 @@ public static class FirstAndSecondPart
     {
         var bitsQueue = QueueService.GeneratePriorityQueue(fileLines);
 
-        var (version, value) = TransmissionService.GetVersion(bitsQueue);
+        var (versions, values) = TransmissionService.GetVersion(bitsQueue);
         
-        return (version, value);
+        return (versions, values);
     }
 }
