@@ -9,9 +9,7 @@ autocrlf=false
 *.user
 *.userosscache
 *.sln.docstates
-/.idea/
-.idea/
-/.idea/*
+.vscode/*
 .idea/*
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
