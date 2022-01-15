@@ -1,3 +1,5 @@
+Note: As these challenges provided points based on the speed of the solution, most code good practices have been ignored (e.g. no TDD, no use of interfaces, etc.) as the focus was entirely on reaching the solution itself as quickly and efficiently as possible.
+
 # Advent Of Code
 
 You're minding your own business on a ship at sea when the overboard alarm goes off! You rush to see if you can help. Apparently, one of the Elves tripped and accidentally sent the sleigh keys flying into the ocean!
